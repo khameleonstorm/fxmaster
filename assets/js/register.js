@@ -49,27 +49,29 @@ function vanish() {
 
 
 // send user sign up data to backend
-function handleSignup(e){
+async function handleSignup(e){
+  e.preventDefault();
   const username = e.target.username.value
   const email = e.target.email.value
 
   if(e.target.password2.value === e.target.password1.value){
-    fetch("https://fxauth.vercel.app/api/users/signup", {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify({
-        username, 
-        email, 
-        password: 
-        e.target.password1.value,
+    try {
+      const res = await fetch("https://fxauth.vercel.app/api/users/signup", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify({
+          username, 
+          email, 
+          password: 
+          e.target.password1.value,
+        })
       })
-    }).then(res => {
-      console.log("Request complete! response:", res);
-    }).catch(ex => {
+  
+      const data = await res.json()
+      console.log(data)
+    } catch (ex) {
       console.log("custom error", ex)
-    })
+    }
   }
-
-  e.preventDefault();
 }
 
