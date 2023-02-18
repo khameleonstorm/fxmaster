@@ -1314,7 +1314,7 @@ address.footer-contact-link { max-width: 30ch; }
 }
 
 .disappear{
-  animation: vanish 8s forwards;
+  animation: vanish 2s forwards;
 }
 @keyframes vanish{
   100%{

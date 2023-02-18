@@ -21,20 +21,29 @@
     <img src="/assets/images/loader.gif" alt="">
   </div>
 
-
-
     <div class="container">
         <div class="forms">
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="#" id="reg-form">
+                <form action="#" id="reg-form" onsubmit="handleLogin(event)" autocomplete="off">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input                          
+                          type="email" 
+                          id="email" 
+                          name="email"
+                          placeholder="Enter your email" 
+                          required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" id="login-email" placeholder="Enter your password" required>
+                        <input 
+                          type="password" 
+                          class="password" 
+                          name="password"
+                          id="login-email" 
+                          placeholder="Enter your password"
+                          required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -49,7 +58,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" id="login-btn" value="Login">
+                      <input type="submit" id="login-btn" value="Login">
                     </div>
                 </form>
 
@@ -64,11 +73,11 @@
             <div class="form signup">
                 <span class="title">Registration</span>
 
-                <form action="#" id="reg-form" onsubmit="handleSignup(event)">
+                <form action="#" id="reg-form" onsubmit="handleSignup(event)" autocomplete="off">
                     <div class="input-field">
                         <input 
                           type="text" 
-                          placeholder="Enter your name" 
+                          placeholder="Enter your Username" 
                           id="username" 
                           name="username"
                           required>
@@ -83,6 +92,8 @@
                           required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
+
+
                     <div class="input-field">
                         <input 
                           type="password" 
@@ -103,6 +114,16 @@
                           required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="input-field">
+                        <input 
+                          type="text" 
+                          class="referral" 
+                          id="referral" 
+                          name="referral"
+                          placeholder="Referral code" >
+                          <ion-icon name="person-add-outline"></ion-icon>
                     </div>
 
                     <div class="checkbox-text">
@@ -132,8 +153,17 @@
         <h3 id="result"></h3>
     </div>
 
- 
-    <!-- javascript cpde link -->
+
+  
+
+<!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <!-- javascript code link -->
     <script src="/assets/js/register.js"></script>
     <script>
 

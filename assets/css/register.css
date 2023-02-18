@@ -87,7 +87,7 @@ body{
 
 .form .input-field{
     position: relative;
-    height: 50px;
+    height: 40px;
     width: 100%;
     margin-top: 30px;
 }
@@ -109,7 +109,8 @@ body{
     border-bottom-color: #4070f4;
 }
 
-.input-field i{
+.input-field i,
+.input-field ion-icon{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -120,6 +121,10 @@ body{
 
 .input-field input:is(:focus, :valid) ~ i{
     color: #4070f4;
+}
+
+.input-field input:is(:focus, :valid) ~ ion-icon{
+    color: #f9004d;
 }
 
 .input-field i.icon{
@@ -202,7 +207,7 @@ body{
   }
   
   .disappear{
-    animation: vanish 8s forwards;
+    animation: vanish 1s forwards;
   }
   @keyframes vanish{
     100%{

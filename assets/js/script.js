@@ -1,5 +1,11 @@
 'use strict';
 
+// checking for user profile
+document.addEventListener("DOMContentLoaded", () => {
+  const profile = JSON.parse(localStorage.getItem("fxMasterUser"))
+  if(!profile) return document.getElementById("reg").innerHTML = "Register";
+  if(profile) return document.getElementById("reg").innerHTML = "Dashboard";
+});
 
 
 /**
@@ -332,4 +338,10 @@ function getExchangeRate(){
     
     function vanish() {
       loader.classList.add("disappear");
+    }
+
+    function handleReg(){
+      const profile = JSON.parse(localStorage.getItem("fxMasterUser"))
+      if(!profile) location = "/register.html";
+      if(profile) location = "/USER_DASH/dashboard.html";
     }
